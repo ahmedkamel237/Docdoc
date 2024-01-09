@@ -15,6 +15,11 @@ class AppTextStyle {
     fontWeight: FontWeight.w700,
     color: AppColor.p100,
   );
+  static TextStyle font24blueBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColor.p100,
+  );
 
   static TextStyle font13grayRegular = TextStyle(
     fontSize: 12.sp,
