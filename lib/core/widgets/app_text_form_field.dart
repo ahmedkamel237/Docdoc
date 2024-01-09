@@ -14,7 +14,7 @@ class AppTextFormFields extends StatelessWidget {
     return TextFormField(
       cursorColor: AppColor.p100,
       keyboardType: keyBoardType,
-      onChanged: onChange,
+      onChanged: onChange, 
       decoration: InputDecoration(
         disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
