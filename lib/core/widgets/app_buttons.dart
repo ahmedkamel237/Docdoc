@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AppButtons extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
-
+ 
   const AppButtons({super.key, required this.title, required this.onTap});
 
   @override
