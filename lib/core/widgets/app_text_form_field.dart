@@ -14,7 +14,7 @@ class AppTextFormFields extends StatelessWidget {
     return TextFormField(
       cursorColor: AppColor.p100,
       keyboardType: keyBoardType,
-      onChanged: onChange, 
+      onChanged: onChange,
       decoration: InputDecoration(
         disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
@@ -38,7 +38,7 @@ class AppTextFormFields extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(
               color: Colors.redAccent,
-            )
+            ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
