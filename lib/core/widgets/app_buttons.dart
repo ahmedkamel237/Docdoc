@@ -40,7 +40,7 @@ class AppButtons extends StatelessWidget {
   }
 
   static AppButtons primary(
-      {required String title, required VoidCallback onTap}) {
+      {required String title, required VoidCallback onTap,}) {
     return AppButtons(
       onTap: onTap,
       title: title,
