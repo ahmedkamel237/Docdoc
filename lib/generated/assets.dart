@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String imagesFinalSplash12 = 'assets/images/splash_screen_android12.png';
   static const String imagesLogo = 'assets/images/logo.svg';
   static const String imagesLogoBackground = 'assets/images/logo_background.svg';
   static const String imagesOnboarding = 'assets/images/onboarding.png';
