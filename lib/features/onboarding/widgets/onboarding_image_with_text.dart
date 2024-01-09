@@ -34,7 +34,7 @@ class OnBoardingImageWithText extends StatelessWidget {
           left: 0,
           right: 0,
           child: Text(
-            "Best Doctor Appointment App",
+            "Best Doctor\n Appointment App",
             textAlign: TextAlign.center,
             style: AppTextStyle.font32blueBold.copyWith(height: 1.4),
           ),
