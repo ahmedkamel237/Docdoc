@@ -16,8 +16,8 @@ class AppButtons extends StatelessWidget {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         minimumSize: MaterialStateProperty.all(
           const Size(
-            double.infinity,
-            52,
+            double.maxFinite,
+            50,
           ),
         ),
         shape: MaterialStateProperty.all(
