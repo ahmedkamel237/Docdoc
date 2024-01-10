@@ -27,7 +27,7 @@ class AppTextStyle {
     color: AppColor.gray70,
   );
   static TextStyle font16graySemiBold = TextStyle(
-    fontSize: 12.sp,
+    fontSize: 14.sp,
     fontWeight: FontWeight.w600,
     color: AppColor.white,
   );

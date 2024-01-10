@@ -1,6 +1,7 @@
 import 'package:doctor/core/theme/app_text_style.dart';
 import 'package:doctor/core/theme/color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButtons extends StatelessWidget {
   final String title;
@@ -31,10 +32,13 @@ class AppButtons extends StatelessWidget {
         ),
       ),
       onPressed: onTap,
-      child: Text(
-        title,
-        textAlign: TextAlign.center,
-        style: AppTextStyle.font16graySemiBold,
+      child: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 12.0.w,vertical: 14.h),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: AppTextStyle.font16graySemiBold,
+        ),
       ),
     );
   }
