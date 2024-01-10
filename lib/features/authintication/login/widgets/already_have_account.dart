@@ -8,13 +8,24 @@ class AlreadyHaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,
-      text: TextSpan(children: [
-        TextSpan(
-          text: "Already have account yet ? ",
-          style: AppTextStyle.font10black500wight,
-        ),
-        TextSpan(text: "Sign up", style: AppTextStyle.font12blueMedium),
-      ]),
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: "Already have account yet ? ",
+            style: AppTextStyle.font10black500wight,
+          ),
+          WidgetSpan(
+            child: GestureDetector(
+              onTap: () {
+              },
+              child: Text(
+                "Sign up",
+                style: AppTextStyle.font12blueMedium,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
