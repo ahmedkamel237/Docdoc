@@ -4,8 +4,8 @@ import 'package:doctor/core/theme/color.dart';
 import 'package:doctor/core/widgets/app_buttons.dart';
 import 'package:doctor/core/widgets/app_text_form_field.dart';
 import 'package:doctor/features/authintication/data/models/api_login_input.dart';
-import 'package:doctor/features/authintication/ui/login/login_cubit.dart';
-import 'package:doctor/features/authintication/ui/login/widgets/password_validator.dart';
+import 'package:doctor/features/authintication/ui/pages/login/login_cubit.dart';
+import 'package:doctor/features/authintication/ui/pages/login/widgets/password_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +45,11 @@ class _LoginFormState extends State<LoginForm> {
       });
     });
   }
-
+  @override
+  void dispose() {
+    _passwordController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Form(

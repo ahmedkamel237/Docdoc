@@ -1,5 +1,6 @@
 import 'package:doctor/core/routing/routs.dart';
-import 'package:doctor/features/authintication/ui/login/login_screen.dart';
+import 'package:doctor/features/authintication/ui/pages/login/login_screen.dart';
+import 'package:doctor/features/authintication/ui/pages/register/register_page.dart';
 import 'package:doctor/features/home/home_screen.dart';
 import 'package:doctor/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,10 @@ class AppRouter {
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => const LoginScreen(),
+        );
+        case Routes.registerScreen:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterScreen(),
         );
       default:
         return MaterialPageRoute(
