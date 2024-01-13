@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormFields extends StatelessWidget {
-  final String? labelText;
+  final String labelText;
   final TextInputType? keyBoardType;
   final Function(String)? onChange;
   final EdgeInsetsGeometry? contentPadding;
@@ -19,7 +19,7 @@ class AppTextFormFields extends StatelessWidget {
 
   const AppTextFormFields(
       {super.key,
-      this.labelText,
+      required this.labelText,
       this.keyBoardType,
       this.onChange,
       this.contentPadding,

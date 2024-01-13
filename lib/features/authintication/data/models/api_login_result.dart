@@ -4,24 +4,24 @@
 
 import 'dart:convert';
 
-ApiLoginResult apiLoginResultFromJson(String str) => ApiLoginResult.fromJson(json.decode(str));
+ApiAuthResult apiLoginResultFromJson(String str) => ApiAuthResult.fromJson(json.decode(str));
 
-String apiLoginResultToJson(ApiLoginResult data) => json.encode(data.toJson());
+String apiLoginResultToJson(ApiAuthResult data) => json.encode(data.toJson());
 
-class ApiLoginResult {
+class ApiAuthResult {
   final String? message;
   final UserData? data;
   final bool? status;
   final int? code;
 
-  ApiLoginResult({
+  ApiAuthResult({
     this.message,
     this.data,
     this.status,
     this.code,
   });
 
-  factory ApiLoginResult.fromJson(Map<String, dynamic> json) => ApiLoginResult(
+  factory ApiAuthResult.fromJson(Map<String, dynamic> json) => ApiAuthResult(
     message: json["message"],
     data: json["data"] == null ? null : UserData.fromJson(json["data"]),
     status: json["status"],

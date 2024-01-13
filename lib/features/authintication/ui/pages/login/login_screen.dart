@@ -3,11 +3,12 @@ import 'package:doctor/core/helpers/extentions.dart';
 import 'package:doctor/core/routing/routs.dart';
 import 'package:doctor/core/theme/app_text_style.dart';
 import 'package:doctor/core/theme/color.dart';
-import 'package:doctor/features/authintication/ui/login/login_cubit.dart';
-import 'package:doctor/features/authintication/ui/login/login_state.dart';
-import 'package:doctor/features/authintication/ui/login/widgets/already_have_account.dart';
-import 'package:doctor/features/authintication/ui/login/widgets/login_form.dart';
-import 'package:doctor/features/authintication/ui/login/widgets/terms_conditions.dart';
+import 'package:doctor/features/authintication/ui/pages/login/login_cubit.dart';
+import 'package:doctor/features/authintication/ui/pages/login/login_state.dart';
+import 'package:doctor/features/authintication/ui/widgets/already_have_account.dart';
+import 'package:doctor/features/authintication/ui/pages/login/widgets/login_form.dart';
+import 'package:doctor/features/authintication/ui/widgets/terms_conditions.dart';
+import 'package:doctor/features/authintication/ui/widgets/title_subtitle_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,18 +37,17 @@ class _LoginScreenState extends State<_LoginScreenBody> {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-      current is Loading || current is Success || current is Error,
+          current is Loading || current is Success || current is Error,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
             showDialog(
               context: context,
-              builder: (context) =>
-                  Center(
-                    child: CircularProgressIndicator(
-                      color: AppColor.p100,
-                    ),
-                  ),
+              builder: (context) => Center(
+                child: CircularProgressIndicator(
+                  color: AppColor.p100,
+                ),
+              ),
             );
           },
           success: (data) {
@@ -58,25 +58,26 @@ class _LoginScreenState extends State<_LoginScreenBody> {
             context.pop();
             showDialog(
               context: context,
-              builder: (context) =>
-                  AlertDialog(
-                    icon: const Icon(
-                      Icons.error_outline,
-                      color: Colors.red,
-                    ),
-                    content: Text(
-                      error,
-                      style: AppTextStyle.font15DarkBlueMedium,
-                    ),
-                    actions: [
-                      TextButton(
-                          onPressed: () {
-                            context.pop();
-                          },
-                          child: Text("Got it",
-                              style: AppTextStyle.font14BlueSemiBold,)),
-                    ],
-                  ),
+              builder: (context) => AlertDialog(
+                icon: const Icon(
+                  Icons.error_outline,
+                  color: Colors.red,
+                ),
+                content: Text(
+                  error,
+                  style: AppTextStyle.font15DarkBlueMedium,
+                ),
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        context.pop();
+                      },
+                      child: Text(
+                        "Got it",
+                        style: AppTextStyle.font14BlueSemiBold,
+                      )),
+                ],
+              ),
             );
           },
         );
@@ -92,25 +93,23 @@ class _LoginScreenState extends State<_LoginScreenBody> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 50.h),
-                    Text(
-                      "Welcome Back",
-                      style: AppTextStyle.font24blueBold,
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
-                      style: AppTextStyle.font13grayRegular.copyWith(
-                        height: 1.8,
-                        fontSize: 14,
-                        letterSpacing: 0.20,
-                      ),
-                    ),
+                    const TitleAndSubTitleHeader(
+                        title: "Welcome Back",
+                        subtitle:
+                            "We're excited to have you back, can't wait to see what you've been up to since you last logged in."),
                     const LoginForm(),
                     SizedBox(height: 16.h),
                     const TermsAndConditions(),
                     SizedBox(height: 40.h),
-                    const Center(child: AlreadyHaveAccount()),
+                    Center(
+                      child: AlreadyHaveAccount(
+                        title: "Don't have an account",
+                        buttonTitle: "Sign up",
+                        buttonTab: () {
+                          context.pushReplacementNamed(Routes.registerScreen);
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),
